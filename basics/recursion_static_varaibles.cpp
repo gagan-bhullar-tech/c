@@ -6,7 +6,7 @@ int sum(int n) {
     static int i = 0;
     if (n > 0) {
         i++;
-        return i + sum(n - 1);
+        return i + sum(n - 1); 
     }
     return 0;
 }
