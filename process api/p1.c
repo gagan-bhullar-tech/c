@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 int main(int argc, char *argv[]) {
     printf("hello (pid: %d)\n", getpid());
@@ -13,6 +14,7 @@ int main(int argc, char *argv[]) {
         printf("hello, I am child (pid: %d)\n", getpid());
     } else {
         // parent process
+        wait(NULL); // wait for child process to finish
         printf("hello, I am parent of %d (pid: %d)\n", rc, getpid());
     }
 }
