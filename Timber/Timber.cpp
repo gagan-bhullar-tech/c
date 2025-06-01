@@ -8,13 +8,24 @@ int main()
 
 	RenderWindow window(vm, "Timber", Style::Fullscreen);
 
+	Texture textureBackground;
+
+	textureBackground.loadFromFile("graphics/background.png");
+
+	Sprite spriteBackground;
+	spriteBackground.setTexture(textureBackground);
+	spriteBackground.setPosition(0, 0);
+	
 	while (window.isOpen()) {
+
+		window.clear();
+
+		window.draw(spriteBackground);
+
+		window.display();
+
 		if (Keyboard::isKeyPressed(Keyboard::Escape)) {
 			window.close();
 		}
 	}
-
-	window.clear();
-
-	window.display();
 }
