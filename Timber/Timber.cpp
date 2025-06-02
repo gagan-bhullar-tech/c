@@ -49,10 +49,44 @@ int main()
 	spriteCloud1.setPosition(0, 0);
 	spriteCloud2.setPosition(0, 250);
 	spriteCloud3.setPosition(0, 500);
+
+	bool cloud1Active = false;
+	bool cloud2Active = false;
+	bool cloud3Active = false;
+
+	float cloud1Speed = 0.0f;
+	float cloud2Speed = 0.0f;
+	float cloud3Speed = 0.0f;
+
+	Clock clock;
 	
 	while (window.isOpen()) {
 
 		window.clear();
+
+		Time dt = clock.restart();
+
+		if (!beeActive) {
+
+			// how fast is the bee
+			srand((int)time(0));
+			beeSpeed = (rand() % 200) + 200;
+
+			// how high is the bee
+			srand((int)time(0) * 10);
+			float height = (rand() % 500) + 500;
+			spriteBee.setPosition(2000, height);
+			beeActive = true;
+		}
+		else
+		{
+			spriteBee.setPosition(spriteBee.getPosition().x - (beeSpeed * dt.asSeconds()), spriteBee.getPosition().y);
+
+			if (spriteBee.getPosition().x < -100)
+			{
+				beeActive = false;
+			}
+		}
 
 		window.draw(spriteBackground);
 		window.draw(spriteTree);
