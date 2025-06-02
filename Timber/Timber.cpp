@@ -25,6 +25,30 @@ int main()
 	Sprite spriteTree;
 	spriteTree.setTexture(textureTree);
 	spriteTree.setPosition(TREE_HORIZONTAL_POSITION, TREE_VERTICAL_POSITION);
+
+	Texture textureBee;
+
+	textureBee.loadFromFile("graphics/bee.png");
+	Sprite spriteBee;
+	spriteBee.setTexture(textureBee);
+	spriteBee.setPosition(0, 800);
+
+	bool beeActive = false;
+	
+	float beeSpeed = 0.0f;
+
+	Texture textureCloud;
+
+	textureCloud.loadFromFile("graphics/cloud.png");
+
+	Sprite spriteCloud1, spriteCloud2, spriteCloud3;
+	spriteCloud1.setTexture(textureCloud);
+	spriteCloud2.setTexture(textureCloud);
+	spriteCloud3.setTexture(textureCloud);
+
+	spriteCloud1.setPosition(0, 0);
+	spriteCloud2.setPosition(0, 250);
+	spriteCloud3.setPosition(0, 500);
 	
 	while (window.isOpen()) {
 
@@ -32,6 +56,10 @@ int main()
 
 		window.draw(spriteBackground);
 		window.draw(spriteTree);
+		window.draw(spriteBee);
+		window.draw(spriteCloud1);
+		window.draw(spriteCloud2);
+		window.draw(spriteCloud3);
 
 		window.display();
 
