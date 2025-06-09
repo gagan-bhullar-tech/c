@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <sstream>
 
 using namespace sf;
 
@@ -6,6 +7,32 @@ int main()
 {
 	const float TREE_HORIZONTAL_POSITION = 810;
 	const float TREE_VERTICAL_POSITION = 0;
+
+	int score = 0;
+
+	Text messageText;
+	Text scoreText;
+
+	Font font;
+	font.loadFromFile("fonts/KOMIKAP_.ttf");
+
+	messageText.setFont(font);
+	scoreText.setFont(font);
+
+	messageText.setString("Press Enter to start!");
+	scoreText.setString("Score = 0");
+
+	messageText.setCharacterSize(75);
+	scoreText.setCharacterSize(100);
+
+	messageText.setFillColor(Color::White);
+	scoreText.setFillColor(Color::White);
+
+	FloatRect textRect = messageText.getLocalBounds();
+	messageText.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
+	messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
+
+	scoreText.setPosition(20, 20);
 
     VideoMode vm(1920, 1080);
 
@@ -69,6 +96,10 @@ int main()
 			window.clear();
 
 			Time dt = clock.restart();
+
+			std::stringstream ss;
+			ss << "Score = " << score;
+			scoreText.setString(ss.str());
 
 			if (!beeActive) {
 
@@ -162,6 +193,10 @@ int main()
 		window.draw(spriteCloud1);
 		window.draw(spriteCloud2);
 		window.draw(spriteCloud3);
+		window.draw(scoreText);
+		if (paused) {
+			window.draw(messageText);
+		}
 
 		window.display();
 
