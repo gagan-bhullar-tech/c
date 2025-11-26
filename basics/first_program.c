@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 int main() {
-    if (puts("Hello, World!") == EOF) {
-        perror("puts failed");
+    if (printf("Hello, World!") < 0) {
+        perror("printf failed");
         return EXIT_FAILURE;
     }
     return EXIT_SUCCESS;
