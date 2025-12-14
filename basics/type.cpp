@@ -8,5 +8,8 @@ int main() {
     printf("%d", b);
 
     unsigned long long d = 0xFFFFFF;
-    printf("%d", d);
+    printf("%llu", d);
+
+    long value = 123;
+    printf("%lu", value);
 }
