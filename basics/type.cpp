@@ -11,5 +11,13 @@ int main() {
     printf("%llu", d);
 
     long value = 123;
-    printf("%lu", value);
+    printf("%lu\n", value);
+
+    char c1 = 'M';
+
+    wchar_t y = L'Z';
+
+    printf("char: %c\n", c1);
+
+    printf("char lc: %c", y);
 }
