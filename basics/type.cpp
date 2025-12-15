@@ -19,5 +19,11 @@ int main() {
 
     printf("char: %c\n", c1);
 
-    printf("char lc: %c", y);
+    printf("char lc: %c\n", y);
+
+    bool boolVal = false;
+
+    printf("bool %d\n", boolVal);
+
+    printf("9 == 9: %d", 9 == 9);
 }
