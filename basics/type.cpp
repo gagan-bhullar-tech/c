@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <cstddef>
 
 int main() {
     unsigned short a = 0b10101010;
@@ -25,5 +26,9 @@ int main() {
 
     printf("bool %d\n", boolVal);
 
-    printf("9 == 9: %d", 9 == 9);
+    printf("9 == 9: %d\n", 9 == 9);
+
+    size_t sizeOfa = sizeof(c1);
+
+    printf("%zd", sizeOfa);
 }
