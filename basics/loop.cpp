@@ -7,4 +7,6 @@ int main() {
         if (value > maximum) maximum = value;
     }
     printf("maximum value: %lu", maximum);
+
+    printf("\ntotal size of array: %d, short: %d, number of elements: %d", sizeof(values), sizeof(long), sizeof(values) / sizeof(long));
 }
