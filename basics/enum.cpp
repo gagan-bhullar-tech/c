@@ -8,7 +8,7 @@ enum class Race {
 };
 
 int main() {
-    Race race;
+    Race race = Race::Ivyn;
 
     switch(race) {
         case Race::Ivyn: {
@@ -27,7 +27,5 @@ int main() {
             printf("Julian");
             break;
         }
-        default:
-            printf("this is not valid race");
     }
 }
