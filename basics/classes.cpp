@@ -17,6 +17,10 @@ struct Point {
         int getY() {
             return y;
         }
+
+        ~Point() {
+            printf("\nthe point destructor is calling here");
+        }
 };
 
 int main() {
