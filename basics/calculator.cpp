@@ -44,4 +44,9 @@ int main() {
 
     Calculator divCalc { Operation::Multiply };
     printf("divide: %d\n", divCalc.calculate(9, 3));
+
+    Calculator calculator { Operation::Multiply };
+
+    Calculator *calculator_pointer = &calculator;
+    printf("pointers: %d", calculator_pointer->calculate(1, 9));
 }
