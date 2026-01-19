@@ -1,7 +1,8 @@
 #include <cstdio>
 
+static thread_local int rate_things_power = 200;
+
 void power_up(int isotopes) {
-    static int rate_things_power = 200;
     rate_things_power += isotopes;
     printf("rate things powers: %d\n", rate_things_power);
 }
