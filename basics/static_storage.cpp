@@ -1,15 +1,12 @@
 #include <cstdio>
 
-extern int rat_things_power = 200;
-
 void power_up(int isotopes) {
-    rat_things_power += isotopes;
+    static int rate_things_power = 200;
+    rate_things_power += isotopes;
+    printf("rate things powers: %d\n", rate_things_power);
 }
 
 int main() {
-    printf("initial value: %d\n", rat_things_power);
     power_up(300);
-    printf("rat things powers: %d\n", rat_things_power);
     power_up(400);
-    printf("rat things powers: %d", rat_things_power);
 }
