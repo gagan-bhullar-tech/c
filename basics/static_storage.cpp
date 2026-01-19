@@ -1,6 +1,6 @@
 #include <cstdio>
 
-static int rat_things_power = 200;
+extern int rat_things_power = 200;
 
 void power_up(int isotopes) {
     rat_things_power += isotopes;
