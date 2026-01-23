@@ -6,6 +6,7 @@ struct Excep {
         if (x == 0xFACE) {
             throw std::runtime_error{ "this is an exception"};
         }
+        printf("it is not thrown");
     }
 };
 
